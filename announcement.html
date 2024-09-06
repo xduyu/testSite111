@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали объявления</title>
+    <link rel="stylesheet" href="announcement.css">
+    <!-- <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+            color: #000000;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        header a:hover {
+            background-color: #252525;
+            border-radius: 5px;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #announcement-detail {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #announcement-detail h2 {
+            margin-top: 0;
+            color: #000000;
+        }
+
+        #announcement-detail img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        #announcement-detail p {
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            padding: 15px;
+            border-top: 2px solid #f4f4f4;
+        }
+
+        .contact-info h3 {
+            margin: 0 0 10px 0;
+            color: #007BFF;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        /* Comments Section */
+        #comments-section {
+            margin-top: 40px;
+        }
+
+        #comments-section h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #comments-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #comments-list li {
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #comment-form {
+            margin-top: 20px;
+        }
+
+        #comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+
+        #comment-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #comment-form button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+        }
+    </style> -->
+</head>
+<body>
+    <header>
+            <h1>Подробности объявления</h1>
+            <a href="index.html">Главная страница</a>
+    </header>
+
+    <main>
+        <div id="announcement-detail" class="announcement-detail">
+            <!-- Details will be injected here by JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (!id) {
+                console.error('No announcement ID found in the URL.');
+                return;
+            }
+
+            fetch(`http://127.0.0.1:5000/announcements/${id}`)
+                .then(response => response.json())
+                .then(announcement => {
+                    const detailContainer = document.getElementById('announcement-detail');
+                    detailContainer.innerHTML = `
+                        <h2>${announcement.title}</h2>
+                        <p>${announcement.content}</p>
+                        <p><strong>Name:</strong> ${announcement.name || 'Not provided'}</p>
+                        <p><strong>Contact:</strong> ${announcement.contact || 'Not provided'}</p>
+                    ${announcement.image ? `<img src="${announcement.image}" alt="Image" style="max-width 100%;max-height: 100%;">` : ''}
+                        <div class="admin-messages-section">
+                            <h3>Messages from Admins:</h3>
+                            <div id="admin-messages-list"></div>
+                        </div>
+                    `;
+
+                    // Load and display admin messages
+                    fetch(`http://127.0.0.1:5000/announcements/${id}/messages`)
+                        .then(response => response.json())
+                        .then(messages => {
+                            const messagesList = document.getElementById('admin-messages-list');
+                            messagesList.innerHTML = messages.map(message =>
+                                `<p>${message.content}</p>`
+                            ).join('');
+                        })
+                        .catch(error => console.error('Error fetching messages:', error));
+                })
+                .catch(error => console.error('Error fetching announcement details:', error));
+        });
+    </script>
+</body>
+</html>

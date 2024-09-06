@@ -1,0 +1,127 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    box-sizing: border-box; /* Add this for easier sizing */
+}
+
+header {
+    background-color: #4a4a4a;
+    color: #fff;
+    padding: 15px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px; /* Adjust font size for better readability */
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.user-greeting {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.auth-button {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 25px;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size for smaller screens */
+    min-width: 100px; /* Ensure buttons are large enough */
+    display: inline-block;
+}
+
+.auth-button:hover {
+    background-color: #5a4fdf;
+}
+
+.add-announcement-button {
+    background-color: #ff6b81;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.add-announcement-button:hover {
+    background-color: #ff4d6d;
+}
+
+main {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+.listA {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.announcement {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(100% - 20px); /* Ensure announcements fit on smaller screens */
+    box-sizing: border-box;
+}
+
+.announcement img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.announcement h2 {
+    margin-top: 0;
+    font-size: 18px; /* Adjust font size for readability */
+}
+
+.announcement p {
+    margin: 10px 0;
+    font-size: 14px; /* Adjust font size for readability */
+}
+
+@media (min-width: 768px) {
+    .announcement {
+        width: calc(50% - 20px); /* Two items per row on medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .announcement {
+        width: calc(33% - 20px); /* Three items per row on larger screens */
+    }
+}

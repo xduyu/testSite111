@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+
+            fetch('http://127.0.0.1:5000/register', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const messageElement = document.getElementById('message');
+                if (data.error) {
+                    messageElement.textContent = data.error;
+                    messageElement.style.color = 'red';
+                } else {
+                    messageElement.textContent = 'Registration successful!';
+                    messageElement.style.color = 'green';
+
+                    // Сохранение информации о пользователе и перенаправление на главную страницу
+                    localStorage.setItem('loggedInUser', JSON.stringify({ username: formData.get('username') }));
+                    setTimeout(() => {
+                        window.location.href = 'index.html';  // Перенаправление на главную страницу
+                    }, 1000);  // Задержка в 1 секунду для отображения сообщения
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

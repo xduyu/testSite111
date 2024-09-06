@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="announcement.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Личный кабинет</h1>
+            <a href="index.html" class="back-button">Назад</a>
+        </div>
+    </header>
+    <main>
+        <section id="user-info">
+            <h2>Информация о пользователе</h2>
+            <p><strong>Логин:</strong> <span id="username"></span></p>
+            <p><strong>Пароль:</strong> <span id="password"></span></p>
+        </section>
+        <section id="announcements-list">
+            <h2>Ваши объявления</h2>
+            <!-- Объявления будут добавляться сюда через JavaScript -->
+        </section>
+        <section id="change-password">
+            <h2>Сменить пароль</h2>
+            <form id="change-password-form">
+                <label for="current-password">Текущий пароль:</label>
+                <input type="password" id="current-password" name="current-password" required>
+
+                <label for="new-password">Новый пароль:</label>
+                <input type="password" id="new-password" name="new-password" required>
+
+                <label for="confirm-password">Подтвердите новый пароль:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <button type="submit">Сменить пароль</button>
+            </form>
+        </section>
+    </main>
+    <script src="profile.js"></script>
+</body>
+</html>

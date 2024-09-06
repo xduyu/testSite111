@@ -1,0 +1,125 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+header>a {
+    background-color: #6c5ce7;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 25px;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size for smaller screens */
+    min-width: 100px; /* Ensure buttons are large enough */
+    display: inline-block;
+    transition: 0.3s;
+}
+
+header>a:hover {
+    background-color: #5a4fdf;
+}
+
+
+header {
+    background-color: #4a4a4a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #4a4a4a;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+        font-size: 14px;
+    }
+}

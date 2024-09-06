@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объявления</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Объявления</h1>
+            <div id="user-info" class="user-info">
+                <span id="user-greeting" class="user-greeting"></span>
+                <a href="register.html" id="register-link" class="auth-button">Регистрация</a>
+                <a href="login.html" id="login-link" class="auth-button">Вход</a>
+                <a href="profile.html" id="profile-link" class="auth-button" style="display: none;">Личный кабинет</a>
+                <button id="logout-button" class="auth-button" style="display: none;">Выход</button>
+            </div>
+            <a href="add.html" class="add-announcement-button">Добавить объявление</a>
+        </div>
+    </header>
+    <main id="announcements-list" class="listA">
+        <!-- Объявления будут добавляться сюда через JavaScript -->
+    </main>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Проверка, если пользователь авторизован
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            const userGreeting = document.getElementById('user-greeting');
+            const registerLink = document.getElementById('register-link');
+            const loginLink = document.getElementById('login-link');
+            const profileLink = document.getElementById('profile-link');
+            const logoutButton = document.getElementById('logout-button');
+
+            if (loggedInUser) {
+                const user = JSON.parse(loggedInUser);
+                userGreeting.textContent = `Привет, ${user.username}!`;
+                registerLink.style.display = 'none';
+                loginLink.style.display = 'none';
+                profileLink.style.display = 'inline-block';
+                logoutButton.style.display = 'inline-block';
+
+                // Функция выхода из аккаунта
+                logoutButton.addEventListener('click', function() {
+                    localStorage.removeItem('loggedInUser');
+                    location.reload();
+                });
+            } else {
+                userGreeting.textContent = '';
+                registerLink.style.display = 'inline-block';
+                loginLink.style.display = 'inline-block';
+                profileLink.style.display = 'none';
+                logoutButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

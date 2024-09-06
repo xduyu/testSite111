@@ -1,0 +1,52 @@
+[
+    {
+        "id": "9ec21fcc-c39a-4c49-b710-65a1ed1b9475",
+        "username": "123",
+        "password": "scrypt:32768:8:1$bi5Css4TUXsdJPyf$4184c9bfeada01cc9efb69da3f122ce92ae7c51be1d616ca569a69e4058f7b5cabb1e6fe4ff390c3c463f2956784b3ec52677e36fbd1b45aae1f2e28e1a068c6"
+    },
+    {
+        "id": "77896045-d9fa-4a29-ae35-02cfe30cc562",
+        "username": "1",
+        "password": "scrypt:32768:8:1$p4uFKMwVqBZhniiU$2dff8489c32b7c7173b4f91416772f3fa49bcb6b293cc8b03de978d4adc17d126a21f12633b07d216a02050ea24cc387d83730b7bb46ecad060d1c3d2f003d2f"
+    },
+    {
+        "id": "ca5f9e06-f5cf-4e4a-b4d5-179ca2c55e08",
+        "username": "beishzyess",
+        "password": "scrypt:32768:8:1$QvmbQjQmVsaazgaY$d97817df3245d86dcca8dee75601aeae719c4d9f05d23c4134db4107af74b572ca79664ad582f7d3c0e6bf0e2d03dcdc41a043f2a1b92255dc4b5d2e884db3e4"
+    },
+    {
+        "id": "4d8b7bda-6e9a-4593-84c2-f3edeb4f6db4",
+        "username": "3212ewqdasdas",
+        "password": "scrypt:32768:8:1$UitPRDRqP2bUzmf5$3678cc1b4f3fd27acd9bcaef80f0ccb20f48bcdad615226fee6291386f3299607a8799b66ecbc2ee234bde256e1b688119ede0280fb7d615f06e6223cbf75f40"
+    },
+    {
+        "id": "6160ca50-12ed-4810-8835-02a070c92445",
+        "username": "admin",
+        "password": "scrypt:32768:8:1$kvaB3R3bWknOOArd$bf75a160220dee56cd3b4395a0227cab3fb4fa99ddc2f0d87f9d7bb00803283a6c6474d93673acf359b61454b16ea04510926e2c331b86fafa925db0d2239641"
+    },
+    {
+        "id": "f31bfaa7-33ce-4a52-bc8f-d1685a01c086",
+        "username": "1dasdadasdasdasd",
+        "password": "scrypt:32768:8:1$6xQ5VHuv4475Q8w9$abb055345cd0cfb223a495058e54431369ef77a28262833cb2e513c4c563a5e45943f567d69ed242ca9c2c5e3c5802a7e95fde13393cb54b70aa1c6b0a0ec9be"
+    },
+    {
+        "id": "8d6c0b10-754a-42e3-b683-0682e0657fb7",
+        "username": "AnnVladimirovna",
+        "password": "scrypt:32768:8:1$YcbOOET4VwE4As9u$5aedd06decc6ac210e9aa79297664014ec0ad491e08d1880c8db3f487b45209dcde4d94b0d236ea6eec013f916bfab63e9c6060ddde19633d3e44a069115fd40"
+    },
+    {
+        "id": "4d8b0cbb-f4c5-4a75-8210-b974f8e06987",
+        "username": "nakkitefremov",
+        "password": "scrypt:32768:8:1$wH7WHc8Q4tUVj8ZU$61998cdea0988b55f67df6fc41ba2268eb6f84a4ef3dec9f739c28327a79a95a5f00ef04ef85445519e69a09e4993fc8ad177e1e931a93cb63df1b6b14f4ec3b"
+    },
+    {
+        "id": "075269f4-b79e-4b26-bb15-d7e7859055a1",
+        "username": "dfgsyaudiosdjvj",
+        "password": "scrypt:32768:8:1$Wp1oH1wwQt5GcswN$7b5499c2d302cf6401b3f8247dde37b34652320f2c14db181eb68e66ab2315ebe002a37b74fd4855c0e16bd7651b282682c2aca8f630f938c45ca51e74eb6f57"
+    },
+    {
+        "id": "4b6f6a19-d4c2-4aec-8ab1-9930a428c3a4",
+        "username": "VladimirSiri",
+        "password": "scrypt:32768:8:1$9i9nLlgY6oGzZOlr$e1e77cf558524d9fbc75ba5e1207ba1933981988b571a00511f3eceeed3b960cca30fbc5bbf3388987dc9b4b705da6827475686e065d3b84adcfd6197cbfca45"
+    }
+]
