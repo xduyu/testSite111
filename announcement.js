@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    fetch(`http://127.0.0.1:5000/announcements/${id}`)
+    fetch(`https://xduyu.github.io/testSite111/announcements/${id}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
