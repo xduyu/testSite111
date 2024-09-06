@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('password').textContent = '********'; // Не отображаем реальный пароль
 
     // Загрузка и отображение объявлений пользователя
-    fetch(`http://127.0.0.1:5000/announcements?username=${user.username}`)
+    fetch(`https://xduyu.github.io/testSite111/announcements?username=${user.username}`)
         .then(response => response.json())
         .then(data => {
             const announcementsList = document.getElementById('announcements-list');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             try {
-                const response = await fetch(`http://127.0.0.1:5000/users/${user.username}/change-password`, {
+                const response = await fetch(`https://xduyu.github.io/testSite111/users/${user.username}/change-password`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
